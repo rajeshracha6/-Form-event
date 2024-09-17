@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: whitesmoke;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #rajesh {
+        display: block;
+        border: 2px solid black;
+
+        display: flex;
+        justify-content: center;
+      }
+      .M{
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="maindiv">
+      <h2>Student id card form</h2>
+      <fieldset>
+        ID CARD DEATILS <br /><br />
+
+        <form action="name" id="form1">
+          <input
+            type="text"
+            id="First_Name"
+            name="First Name"
+            value=""
+            placeholder="Enter a First Name"
+          /><br /><br />
+          <input
+            type="text"
+            id="Second_Name"
+            name="Second Name"
+            value=""
+            placeholder="Enter a Second Name"
+          /><br /><br />
+          <input
+            type="text"
+            id="ID Number"
+            name="ID Number"
+            value=""
+            placeholder="Enter a ID Number"
+          />
+          <br /><br />
+          <input
+            type="Enter a Course"
+            id="Course"
+            name="Course"
+            value=""
+            placeholder="Enter Course"
+          /><br /><br />
+          <input
+            type="number"
+            id="number"
+            name="number"
+            value=""
+            placeholder="Enter a Mobile Number"
+          /><br /><br />
+          <input
+            type="file"
+            id="alubm"
+            name="file"
+            value="file"
+            accept="image/jpg, image/jpeg, image/png"
+          /><br /><br />
+          <input type="reset" id="reset" />
+          <input type="submit" id="submit" />
+        </form>
+      </fieldset>
+    </div>
+    <div id="rajesh">
+      <div id="rajesh1">
+        <!-- <h2>Rajesh</h2> -->
+        <p></p>
+      </div>
+      <div id="M">
+      <div id="rajesh3">
+        <div id="pic">
+          <img id="img1" />
+        </div>
+        <div id="rajesh4">
+          <p class="sai"></p>
+          <p class="sai"></p>
+          <p class="sai"></p>
+          <p class="sai"></p>
+          <p class="sai"></p>
+          <p class="sai"></p>
+          <p class="sai"></p>
+          <p class="sai"></p>
+        </div>
+    </div>
+      </div>
+    </div>
+    <script>
+      // let harish=document.getElementById("maindiv")
+      let rakesh = document.getElementById("form1");
+      rakesh.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let a = document.getElementById("First_Name").value;
+        let b = document.getElementById("Second_Name").value;
+        let c = document.getElementById("ID Number").value;
+        let d = document.getElementById("Course").value;
+        let r = document.getElementById("number").value;
+        let f = document.getElementById("alubm");
+        let g = document.getElementById("reset").value;
+        let h = document.getElementById("submit").value;
+
+        let dd = document.getElementById("rajesh4");
+        let raj = document.getElementsByClassName("sai");
+        raj[0].innerHTML = ` Name: ${a} ${b}`;
+        raj[1].innerHTML = `${c}`;
+        raj[2].innerHTML = `${d}`; // dd
+        raj[3].innerHTML = `${r}`;
+        // raj[4].innerHTML = f;
+        raj[5].innerHTML = `${g}`;
+        raj[6].innerHTML = `${h}`;
+
+        let img2 = document.getElementById("img1");
+        imgsrc = URL.createObjectURL(f.files[0]);
+        img2.setAttribute("src", `${imgsrc}`);
+        img2.setAttribute("width", "200px");
+        img2.setAttribute("height", "200px");
+      });
+      let br = document.createElement("br")
+      let div=document.createElement("div")
+      document.body.appendChild(div)
+      let form=document.createElement("form")
+      div.appendChild(form)
+      
+      let inp=document.createElement("input")
+      inp.setAttribute("pLaceHoldeR","First name")
+      
+      form.appendChild(inp)
+      inp.appendChild(br)
+      inp.appendChild(document.createElement("br"))
+     
+
+
+   
+      form.appendChild(inp) 
+
+
+
+      let input = document.createElement("input")
+      input.setAttribute("placeholder","Second Name")
+      form.appendChild(input)
+      // document.write("</br>")
+
+
+      let input1 = document.createElement("input")
+      input1.setAttribute("placeholder","ID Number")
+      form.appendChild(input1)
+      input1.appendChild(document.createElement("br"))
+      // document.write("</br>")
+
+
+      let input2 =document.createElement("input")
+      input2.setAttribute("placeholder","Course")
+      form.appendChild(input2)
+      // insertBefore("input2",br)
+      // document.write("</br>")
+      
+      let input3 = document.createElement("input")
+      input3.setAttribute("placeholder","Mobile Number")
+      form.appendChild(input3)
+
+      let input4 = document.createElement("input")
+      input4.setAttribute("type","file")
+      form.appendChild(input4)
+
+      let input5 = document.createElement("input")
+      input5.setAttribute("type","reset")
+      form.appendChild(input5)
+
+      let input6 = document.createElement("input")
+      input6.setAttribute("type","submit")
+      form.appendChild(input6)
+
+      let img = document.createElement("img")
+      img2.setAttribute("src", `${imgsrc}`);
+      form.appendChild(img)
+
+
+
+
+
+    
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <fieldset>
+    <legend>Crating form with ID</legend>
+    <form action="name" id="form1">
+        <input
+          type="text"
+          id="First_Name"
+          name="First Name"
+          value=""
+          placeholder="Enter a First Name"
+        /><br /><br />
+        <input
+          type="text"
+          id="Second_Name"
+          name="Second Name"
+          value=""
+          placeholder="Enter a Second Name"
+        /><br /><br />
+        <input
+          type="text"
+          id="ID Number"
+          name="ID Number"
+          value=""
+          placeholder="Enter a ID Number"
+        />
+        <br /><br />
+        <input
+          type="Enter a Course"
+          id="Course"
+          name="Course"
+          value=""
+          placeholder="Enter Course"
+        /><br /><br />
+        <input
+          type="number"
+          id="number"
+          name="number"
+          value=""
+          placeholder="Enter a Mobile Number"
+        /><br /><br />
+
+        
+        <input
+          type="file"
+          id="alubm"
+          name="file"
+          value="file"
+          accept="image/jpg, image/jpeg, image/png"
+        />
+
+
+        <br /><br />
+        <input type="reset" id="reset" />
+        <input type="submit" id="submit" />
+      </form>
+    </legend>
+    </fieldset> -->
+
+    
+
+    <script>
+    // form.addEventListener("submit",function(event){
+    // event.preventDefault();
+      
+
+
+      let br = document.createElement("br");
+      let div = document.createElement("div");
+      document.body.appendChild(div);
+      let form = document.createElement("form");
+      div.appendChild(form);
+
+      let inp = document.createElement("input");
+      inp.setAttribute("pLaceHoldeR", "First name");
+
+      form.appendChild(inp);
+      inp.appendChild(br);
+      inp.appendChild(document.createElement("br"));
+
+      form.appendChild(inp);
+
+      let input = document.createElement("input");
+      input.setAttribute("placeholder", "Second Name");
+      form.appendChild(input);
+      // document.write("</br>")
+
+      let input1 = document.createElement("input");
+      input1.setAttribute("placeholder", "ID Number");
+      form.appendChild(input1);
+      input1.appendChild(document.createElement("br"));
+      // document.write("</br>")
+
+      let input2 = document.createElement("input");
+      input2.setAttribute("placeholder", "Course");
+      form.appendChild(input2);
+      // insertBefore("input2",br)
+
+      // document.write("</br>")
+
+      let input3 = document.createElement("input");
+      input3.setAttribute("placeholder", "Mobile Number");
+      form.appendChild(input3);
+
+      let input4 = document.createElement("input");
+      input4.setAttribute("type", "file");
+      input4.setAttribute("id", "data");
+      input4.setAttribute("accept", "image/jpg, image/png, image/jpeg");
+      form.appendChild(input4);
+      let input5 = document.createElement("input");
+      input5.setAttribute("type", "reset");
+      form.appendChild(input5);
+
+      let input6 = document.createElement("input");
+      input6.setAttribute("type", "submit");
+      form.appendChild(input6);
+    
+
+      //   img = document.createElement("img")
+      //  form.appendChild(img)
+      //  data=document.getElementById("data")
+      //  imgsrc=URL.createObjectURL(data.files[0])
+      //  img.setAttribute("src", `${imgsrc}`);
+
+
+
+      //  img = document.createElement("img");
+      // img.setAttribute("id", "previewImage");
+      // form.appendChild(img);
+      // form.appendChild(document.createElement("br"));
+    form.addEventListener("submit",(e)=>{
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      // form.addEventListener("submit",function(event){
+      //   event.preventDefault();
+        // console.log("Hello World");
+
+
+        // document.createElement("div");
+        // document.createElementById("idCard");
+       
+       idCard = document.createElement("div");
+       document.body.appendChild(idCard);
+      //  idcard.style.border="solid 2px";
+      idCard.style.border="solid 2px";
+      idCard.style.width="300px";
+      idCard.style.padding="30px";
+
+      img = document.createElement("img")
+       idCard.appendChild(img)
+       data=document.getElementById("data")
+       imgsrc=URL.createObjectURL(data.files[0])
+       img.setAttribute("src", `${imgsrc}`);
+      //  img.body.appendChild(idCard)
+       img.style.width="100px"
+       img.style.height="100px"
+
+
+
+
+
+       let firstname = document.createElement("p");
+       firstname.innerText=`firstname: ${inp.value}`;
+        idCard.appendChild(firstname);
+
+      let secondname =document.createElement("p")
+      secondname.innerText=`secondname: ${input.value}`;
+      idCard.appendChild(secondname);
+
+      let idnumber = document.createElement("p")
+      idnumber.innerText=`ID No: ${input1.value}`;
+      idCard.appendChild(idnumber);
+      
+
+      let course = document.createElement("p")
+      course.innerText=`Course: ${input2.value}`;
+      idCard.appendChild(course);
+
+      let mobilenumber = document.createElement("p")
+      mobilenumber.innerText=`Mobile: ${input3.value}`;
+      idCard.appendChild(mobilenumber);
+
+      // img = document.createElement("img")
+      //  idCard.appendChild(img)
+      //  data=document.getElementById("data")
+      //  imgsrc=URL.createObjectURL(data.files[0])
+      //  img.setAttribute("src", `${imgsrc}`);
+      // //  img.body.appendChild(idCard)
+      //  img.style.width="100px"
+      //  img.style.height="100px"
+
+
+    },false)
+      
+
+
+
+
+
+
+
+
+
+      
+    </script>
+  </body>
+</html>
+<!-- "a+((b-c)+d") -->

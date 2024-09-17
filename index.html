@@ -1,0 +1,240 @@
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Create a Form Dynamically with 
+			the JavaScript
+		</title>
+	</head>
+	<body style="text-align: center;">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<p>
+		Click on the button to create
+		a form dynamically
+		</p>
+		<button onClick="GFG_Fun()">
+			click here
+		</button>
+		<p id="GFG_DOWN"></p>
+<script>
+	var down = document.getElementById("GFG_DOWN");
+		
+	// Create a break line element
+	var br = document.createElement("br"); 
+	function GFG_Fun() {
+			
+	// Create a form dynamically
+	var form = document.createElement("form");
+	form.setAttribute("method", "post");
+	form.setAttribute("action", "submit.php");
+
+	// Create an input element for Full Name
+	var FN = document.createElement("input");
+	FN.setAttribute("type", "text");
+	FN.setAttribute("name", "FullName");
+	FN.setAttribute("placeholder", "Full Name");
+
+	// Create an input element for date of birth
+	var DOB = document.createElement("input");
+	DOB.setAttribute("type", "text");
+	DOB.setAttribute("name", "dob");
+	DOB.setAttribute("placeholder", "DOB");
+
+	// Create an input element for emailID
+	var EID = document.createElement("input");
+	EID.setAttribute("type", "text");
+	EID.setAttribute("name", "emailID");
+	EID.setAttribute("placeholder", "E-Mail ID");
+
+	// Create an input element for password
+	var PWD = document.createElement("input");
+	PWD.setAttribute("type", "password");
+	PWD.setAttribute("name", "password");
+	PWD.setAttribute("placeholder", "Password");
+
+	// Create an input element for retype-password
+	var RPWD = document.createElement("input");
+	RPWD.setAttribute("type", "password");
+	RPWD.setAttribute("name", "reTypePassword");
+	RPWD.setAttribute("placeholder", "ReEnter Password");
+
+				// create a submit button
+				var s = document.createElement("input");
+				s.setAttribute("type", "submit");
+				s.setAttribute("value", "Submit");
+				
+				// Append the full name input to the form
+				form.appendChild(FN); 
+				
+				// Inserting a line break
+				form.appendChild(br.cloneNode()); 
+				
+				// Append the DOB to the form
+				form.appendChild(DOB); 
+				form.appendChild(br.cloneNode()); 
+				
+				// Append the emailID to the form
+				form.appendChild(EID); 
+				form.appendChild(br.cloneNode()); 
+				
+				// Append the Password to the form
+				form.appendChild(PWD); 
+				form.appendChild(br.cloneNode()); 
+				
+				// Append the ReEnterPassword to the form
+				form.appendChild(RPWD); 
+				form.appendChild(br.cloneNode()); 
+				
+				// Append the submit button to the form
+				form.appendChild(s); 
+
+				document.getElementsByTagName("body")[0]
+			.appendChild(form);
+			}
+		</script>
+	</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>ID Card Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .id-card-form, .id-card-preview {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .id-card-form h2, .id-card-preview h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .id-card-form label {
+            font-weight: bold;
+        }
+
+        .id-card-form input[type="text"], 
+        .id-card-form input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 16px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .id-card-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .id-card-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .id-card-preview {
+            text-align: center;
+        }
+
+        .id-card-preview .details {
+            margin: 10px 0;
+        }
+
+        .id-card-preview p {
+            margin: 5px 0;
+        }
+
+        .id-card-preview .name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .id-card-preview .id-number {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="id-card-form">
+        <h2>ID Card Form</h2>
+        <form id="idCardForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="id-number">ID Number:</label>
+            <input type="text" id="id-number" name="id-number" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <input type="submit" value="Generate ID Card">
+        </form>
+    </div>
+
+    <div class="id-card-preview" id="idCardPreview" style="display:none;">
+        <h2>ID Card Preview</h2>
+        <div class="details">
+            <p class="name" id="cardName">John Doe</p>
+            <p class="id-number" id="cardIdNumber">123456789</p>
+            <p id="cardDOB">01-01-2000</p>
+            <p id="cardAddress">123 Main St, City, Country</p>
+            <p id="cardPhone">+1 234 567 890</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('idCardForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the values from the form inputs
+            const name = document.getElementById('name').value;
+            const idNumber = document.getElementById('id-number').value;
+            const dob = document.getElementById('dob').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            // Set the values in the ID card preview
+            document.getElementById('cardName').textContent = name;
+            document.getElementById('cardIdNumber').textContent = idNumber;
+            document.getElementById('cardDOB').textContent = new Date(dob).toLocaleDateString();
+            document.getElementById('cardAddress').textContent = address;
+            document.getElementById('cardPhone').textContent = phone;
+
+            // Display the ID card preview
+            document.getElementById('idCardPreview').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html> -->
+
